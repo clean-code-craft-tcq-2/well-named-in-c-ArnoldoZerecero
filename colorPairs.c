@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "colorPairs.h"
 
 const char* MajorColorNames[] = {
@@ -24,7 +25,7 @@ ColorPair GetColorFromPairNumber(int pairNumber) {
 }
 
 int GetPairNumberFromColor(const ColorPair* colorPair) {
-    return (colorPair->majorColor * TOTAL_NUMBER_OF_MIN_COLORS) + (colorPair->minorColor + 1);
+    return ((colorPair->majorColor * TOTAL_NUMBER_OF_MIN_COLORS) + (colorPair->minorColor + 1));
 }
 
 void PrintColorPairList(char* buffer)
@@ -32,7 +33,7 @@ void PrintColorPairList(char* buffer)
     int pairNumberIdx = 1;
     ColorPair colorPair;
     char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
-    char pairNumberString[MAX_PAIR_NUMBER_CHARS];
+    char pairNumberString[MAX_COLORPAIR_NAME_CHARS];
     while (pairNumberIdx <= MAX_COLORPAIRS)
     {
         sprintf(pairNumberString, "\n%i - ", pairNumberIdx);
